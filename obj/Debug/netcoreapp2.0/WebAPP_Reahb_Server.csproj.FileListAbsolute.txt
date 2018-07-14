@@ -1,0 +1,11 @@
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.deps.json
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.runtimeconfig.json
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.runtimeconfig.dev.json
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.dll
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.pdb
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.csprojResolveAssemblyReference.cache
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.csproj.CoreCompileInputs.cache
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.AssemblyInfoInputs.cache
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.AssemblyInfo.cs
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.dll
+/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.pdb
