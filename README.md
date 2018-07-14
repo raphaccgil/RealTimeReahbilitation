@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WebAPP_Reahb_Server
 
 https://www.nuget.org/packages/WebAPP_Reahb_Server/
@@ -108,3 +109,7 @@ And play around with HMR (Hot Module Replacement) like a boss ??.
 ### TO DOs
 
 1.  Automatically run `dotnet restore` upon project creation
+=======
+# RealTimeReahbilitation
+Server and Client Web Application
+>>>>>>> 1bdf2bf9a9a1640cedf32d222614d8725e5f0e17
