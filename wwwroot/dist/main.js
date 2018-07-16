@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8559a7b31e1d44468c7c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9522d700f5131e0c1204"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -28915,11 +28915,6 @@ var Graph = exports.Graph = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
 
-        fetch("SensorReal/Collect").then(function (response) {
-            return response.json();
-        }).then(function (data) {
-            _this.setState({ forecasts: data, loading: false });
-        });
         _this.state = {
             hubConnection: null,
             chartData: {
@@ -28949,64 +28944,67 @@ var Graph = exports.Graph = function (_Component) {
     _createClass(Graph, [{
         key: "componentDidMount",
         value: function componentDidMount() {
+            var messagecollect = [];
             console.log("Erro aqui?");
             var hubConnection = new _SignalR.HubConnectionBuilder().withUrl('/iot').build();
-
-            hubConnection.on("ReceiveMessage", function (user, message) {
-                var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                var encodedMsg = user + " says " + msg;
-                var li = document.createElement("li");
-                li.textContent = encodedMsg;
-                document.getElementById("messagesList").appendChild(li);
-            });
-
-            document.getElementById("sendButton").addEventListener("click", function (event) {
-                var user = document.getElementById("userInput").value;
-                var message = document.getElementById("messageInput").value;
-                hubConnection.invoke("SendMessage", user, message).catch(function (err) {
-                    return console.error(err.toString());
-                });
-                event.preventDefault();
-            });
 
             hubConnection.start().catch(function (err) {
                 return console.error(err.toString());
             });
-            console.log("Test");
-            //this.setState({hubConnection}, () => {
-            //  this.state.hubConnection.start()
-            //  .then(() => console.log('SignalR Started'))
-            //  .catch(err => console.log('Error connecting SignalR - ' + err));
+            //
+            //hubConnection.on("ReceiveMessage", (user, message) => {
+            //    const msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            //    const encodedMsg = user + " says " + msg;
+            //    const li = document.createElement("li");
+            //    li.textContent = encodedMsg;
+            //    document.getElementById("messagesList").appendChild(li);
             //});
 
+            //document.getElementById("sendButton").addEventListener("click", event => {
+            //    const user = document.getElementById("userInput").value;
+            //    const message = document.getElementById("messageInput").value;
+            //    hubConnection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
+            //    event.preventDefault();
+            //}); 
+
+            hubConnection.on("Broadcast", function (message, user) {
+                var msg = message;
+                var encodedMsg = user;
+                console.log(msg);
+                console.log(encodedMsg);
+            });
+
+            document.getElementById("sendButton").addEventListener("click", function (event) {
+                var user = 10.0;
+                var message = 'alfa';
+                console.log('Entrou?');
+                //chartData.update();
+                messagecollect = message;
+                hubConnection.invoke("Broadcast", message, user).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            });
+
+            var alfa = 10.0;
+            hubConnection.invoke('Broadcast', alfa, alfa);
+            console.log(messagecollect);
+
+            console.log("Test");
+            console.log(messagecollect);
             this.FetchData();
         }
     }, {
         key: "FetchData",
         value: function FetchData() {
-            fetch("SensorReal/Collect").then(function (response) {
-                return response.json();
+            //fetch("SensorReal/Collect")
+            fetch("SensorReal/MainAsyncCont").then(function (response) {
+                return response;
             }).then(function (response) {
                 return console.log(response);
             }).catch(function (error) {
                 return console.log("parsed fail", error);
             });
         }
-
-        // api para requisição dos dados para o gráfico em tempo real
-        //componentDidMount() {
-        //    axios.get(`http://api-pacientes.herokuapp.com/pacientes`)
-        //      .then(res => {
-        //        const persons = res.data;
-        //        console.log(persons)
-        //        this.setState({ persons });
-        //      })
-        //}
-
-        // colocar dentro do render para realizar a requisição websocket
-        //<Websocket url='ws://localhost:8888/live/product/12345/'
-        //onMessage={this.handleData.bind(this)}/>
-
     }, {
         key: "render",
         value: function render() {
@@ -29022,6 +29020,11 @@ var Graph = exports.Graph = function (_Component) {
                     "p",
                     null,
                     "Test val2"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    "  "
                 ),
                 _react2.default.createElement(_reactChartjs.Line, {
                     data: this.state.chartData,

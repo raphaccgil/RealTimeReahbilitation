@@ -799,6 +799,19 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Http.Connections.Client/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Connections.Common": "1.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Client.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Http.Connections.Common/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -1442,6 +1455,35 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Client/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Connections.Client": "1.0.2",
+          "Microsoft.AspNetCore.SignalR.Client.Core": "1.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Client.Core/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "1.0.2",
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "1.0.2",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
+          "Microsoft.Extensions.Logging": "2.1.1",
+          "System.Threading.Channels": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.SignalR.Common/1.0.2": {
@@ -5661,6 +5703,20 @@
         "microsoft.aspnetcore.http.connections.nuspec"
       ]
     },
+    "Microsoft.AspNetCore.Http.Connections.Client/1.0.2": {
+      "sha512": "eUKKMfqbmwy/R0mBgp6CFqrIZ9nQFl59AlFL7nYS1i8OML6IDXj8hEJZUxaF7IFsrbpCrYFrryWskKynl2WCHw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.connections.client/1.0.2",
+      "files": [
+        ".signature.p7s",
+        "lib/netcoreapp2.1/Microsoft.AspNetCore.Http.Connections.Client.dll",
+        "lib/netcoreapp2.1/Microsoft.AspNetCore.Http.Connections.Client.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Client.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Client.xml",
+        "microsoft.aspnetcore.http.connections.client.1.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.http.connections.client.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Http.Connections.Common/1.0.2": {
       "sha512": "4s7EGp6qvYxWs7Eu/gMMBqsWHLB7UIlZsSSCVkB/oFRnnuYpwFSRCgC4SmvkTstz9wfwgd93u0iCzyvqkVEBjA==",
       "type": "package",
@@ -6169,6 +6225,30 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.xml",
         "microsoft.aspnetcore.signalr.1.0.2.nupkg.sha512",
         "microsoft.aspnetcore.signalr.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.SignalR.Client/1.0.2": {
+      "sha512": "MYLHC25YJ3/R/LUahCX6dPM74EdyuR3rurq7D56cJRhIsa/VPXnXB647+ZIsyBXHNN9DePZh1iPzdm8flgIEaw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.signalr.client/1.0.2",
+      "files": [
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.xml",
+        "microsoft.aspnetcore.signalr.client.1.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.signalr.client.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.SignalR.Client.Core/1.0.2": {
+      "sha512": "IbgAu1o7ZnhZ5uiMNQY4dYNMvhvh5lLmXZH5MUz9cxW6dxAFc2CaGEp9iyYvdr2LKpyHy92RCQPRRrvo2z/Olg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.signalr.client.core/1.0.2",
+      "files": [
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.Core.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.Core.xml",
+        "microsoft.aspnetcore.signalr.client.core.1.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.signalr.client.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.SignalR.Common/1.0.2": {
@@ -13442,6 +13522,7 @@
       "Chart.js >= 2.7.2",
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.AspNetCore.SignalR >= 1.0.2",
+      "Microsoft.AspNetCore.SignalR.Client >= 1.0.2",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
       "Microsoft.NETCore.App >= 2.0.0",
       "MongoDB.Driver >= 2.7.0"
@@ -13509,6 +13590,10 @@
             "version": "2.1.1"
           },
           "Microsoft.AspNetCore.SignalR": {
+            "target": "Package",
+            "version": "1.0.2"
+          },
+          "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "1.0.2"
           }

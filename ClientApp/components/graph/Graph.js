@@ -5,16 +5,13 @@ import axios from 'axios';
 import Websocket from 'react-websocket';  // websocket para coletar da API
 import "isomorphic-fetch";
 import { FetchData } from "../FetchData";
-import { HubConnection, HubConnectionBuilder } from '@aspnet/SignalR';
+import { HubConnectionBuilder } from '@aspnet/SignalR';
 
 export class Graph extends Component {
     constructor(props){
+        
         super(props);
-        fetch("SensorReal/Collect")
-            .then(response => response.json())
-            .then(data => {
-        this.setState({ forecasts: data, loading: false });
-      });
+        
         this.state = {
             hubConnection: null,
             chartData:{
@@ -45,64 +42,67 @@ export class Graph extends Component {
     }
         componentDidMount()
         {
+            var messagecollect = [] 
             console.log("Erro aqui?")
             const hubConnection = new HubConnectionBuilder()
             .withUrl('/iot')
             .build();
             
-            hubConnection.on("ReceiveMessage", (user, message) => {
-                const msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                const encodedMsg = user + " says " + msg;
-                const li = document.createElement("li");
-                li.textContent = encodedMsg;
-                document.getElementById("messagesList").appendChild(li);
+            hubConnection.start().catch(err => console.error(err.toString()));   
+            //
+            //hubConnection.on("ReceiveMessage", (user, message) => {
+            //    const msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            //    const encodedMsg = user + " says " + msg;
+            //    const li = document.createElement("li");
+            //    li.textContent = encodedMsg;
+            //    document.getElementById("messagesList").appendChild(li);
+            //});
+
+            //document.getElementById("sendButton").addEventListener("click", event => {
+            //    const user = document.getElementById("userInput").value;
+            //    const message = document.getElementById("messageInput").value;
+            //    hubConnection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
+            //    event.preventDefault();
+            //}); 
+               
+            hubConnection.on("Broadcast", (message, user) => {
+                const msg = message;
+                const encodedMsg = user;
+                console.log(msg)
+                console.log(encodedMsg)
             });
 
             document.getElementById("sendButton").addEventListener("click", event => {
-                const user = document.getElementById("userInput").value;
-                const message = document.getElementById("messageInput").value;
-                hubConnection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
-                event.preventDefault();
+                const user = (10.0);
+                const message = ('alfa');
+                console.log('Entrou?')
+                //chartData.update();
+                messagecollect = message;
+                hubConnection.invoke("Broadcast", message, user).catch(err => console.error(err.toString()));
             });
 
-            hubConnection.start().catch(err => console.error(err.toString()));    
+            const alfa = 10.0
+            hubConnection.invoke('Broadcast', alfa, alfa)
+            console.log(messagecollect)
+
             console.log("Test")
-            //this.setState({hubConnection}, () => {
-            //  this.state.hubConnection.start()
-            //  .then(() => console.log('SignalR Started'))
-            //  .catch(err => console.log('Error connecting SignalR - ' + err));
-            //});
-        
+            console.log(messagecollect)
             this.FetchData();
-            
         }
         FetchData()
         {
-            fetch("SensorReal/Collect")
-            .then(response => response.json())
+            //fetch("SensorReal/Collect")
+            fetch("SensorReal/MainAsyncCont")
+            .then(response => response)
             .then(response => console.log(response))
             .catch(error => console.log(`parsed fail`, error));
         }
-
-    // api para requisição dos dados para o gráfico em tempo real
-    //componentDidMount() {
-    //    axios.get(`http://api-pacientes.herokuapp.com/pacientes`)
-    //      .then(res => {
-    //        const persons = res.data;
-    //        console.log(persons)
-    //        this.setState({ persons });
-    //      })
-    //}
-
-    // colocar dentro do render para realizar a requisição websocket
-    //<Websocket url='ws://localhost:8888/live/product/12345/'
-    //onMessage={this.handleData.bind(this)}/>
     render() {
       return (
     <div>
-
         <h1>Vamos explorar os dados em tempo real</h1>
             <p>Test val2</p> 
+            <p>  </p>
             <Line
                 data={this.state.chartData}
                 options={{
