@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { RouteComponentProps } from "react-router";
+import { Layout } from "./Layout"
 import "isomorphic-fetch";
 
 export class FetchData extends Component {
@@ -26,6 +27,7 @@ export class FetchData extends Component {
 
     return (
       <div>
+        <Layout/>
         <h1>Weather forecast</h1>
         <p>This component demonstrates fetching data from .</p>
         {contents}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { RouteComponentProps } from "react-router";
+import { Layout} from "./Layout"
 
 export class Counter extends Component {
   state = { currentCount: 0 };
@@ -7,6 +8,8 @@ export class Counter extends Component {
   render() {
     return (
       <div>
+        <Layout/>
+        <p/>
         <h1>Counter</h1>
 
         <p>This is a simple example of a React component.</p>

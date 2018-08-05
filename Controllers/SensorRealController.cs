@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Web;
 
 
 // COntrole para coleta dos dados no mongo
@@ -18,7 +19,8 @@ namespace WebAPP_Reahb_Server.Controllers
 {
 	public class SensorRealController : Controller
     {		
-   		public IActionResult Test()
+   		
+		public IActionResult Test()
 		{
 			return Content("Hello world");
 		}
@@ -50,6 +52,10 @@ namespace WebAPP_Reahb_Server.Controllers
 				.WithUrl("http://localhost:60672/iot")
                 .Build();
 
+
+			//CancellationToken disconnectedToken = Response.ClientDisconnectedToken;
+            //using (var source = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, disconnectedToken))
+       
 			await hubConnection.StartAsync();
 
             // Esse será o ponto no qual irá alimentar o servidor com os dados coletados no mongodb
@@ -59,7 +65,6 @@ namespace WebAPP_Reahb_Server.Controllers
             List<IotData> listaVal = dBContext.IotData.Find(m => true).ToList();
 
             // preparar os dados
-
             List<Double> listaHead = new List<double>();
 
             foreach (var foo in listaVal)
@@ -69,9 +74,8 @@ namespace WebAPP_Reahb_Server.Controllers
 			while (!cancellationToken.IsCancellationRequested)
             {
                 await Task.Delay(250, cancellationToken);
-				Console.Out.WriteAsync("Ta rolando????");
                 // Finally send the value:
-				await hubConnection.SendAsync("Broadcast", "data", 10.0, cancellationToken);
+				await hubConnection.SendAsync("Broadcast", "data", listaHead, cancellationToken);
             }
 
 			await hubConnection.DisposeAsync();

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { RouteComponentProps } from "react-router";
-
+import { Layout } from "./Layout"
 export class Home extends Component {
   render() {
     return (
       <div>
+        <Layout/>
         <h1>Hello, world!</h1>
         <p>Welcome to your new single-page application, built with:</p>
         <ul>

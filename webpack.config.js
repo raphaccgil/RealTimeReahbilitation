@@ -23,7 +23,8 @@ module.exports = env => {
             use: {
               loader: "babel-loader",
               options: {
-                presets: ["babel-preset-env", "react"],
+                //presets: ["babel-preset-env", "react"],
+                presets: ["es2015", "react", "stage-3"],
                 plugins: [
                   "react-hot-loader/babel",
                   "transform-class-properties"
