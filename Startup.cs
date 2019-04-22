@@ -31,6 +31,7 @@ namespace WebAPP_Reahb_Server
 
 			services.AddMvc();
 			services.AddSignalR();
+			services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +52,8 @@ namespace WebAPP_Reahb_Server
             }
 
             app.UseStaticFiles();
-            app.UseSignalR(routes =>
+    
+			app.UseSignalR(routes =>
             {
 				routes.MapHub<SensorRealTime>("/iot");
             });

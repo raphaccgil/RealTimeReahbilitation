@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export class NavMenu extends Component {
+  constructor(props){
+    super(props);
+    console.log("Verificar")
+  }
   render() {
     return (
       <div className="main-nav">
@@ -26,7 +30,7 @@ export class NavMenu extends Component {
           <div className="navbar-collapse collapse">
             <ul className="nav navbar-nav">
               <li>
-                <NavLink to={"/"} exact activeClassName="active">
+                <NavLink to={"/home"} exact activeClassName="active">
                   <span className="glyphicon glyphicon-home" /> Home
                 </NavLink>
               </li>

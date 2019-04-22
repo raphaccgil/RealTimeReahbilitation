@@ -11,6 +11,7 @@
     <PackageReference Include="MongoDB.Driver" Version="2.7.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.0.2" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
@@ -21,11 +22,14 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Hubs\" />
+    <Folder Include="Logic\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Hubs\EmptyClass.cs" />
     <Compile Remove="Models\Mongo.cs" />
+    <Compile Remove="Controllers\MongoController.cs" />
+    <Compile Remove="Logic\EmptyClass.cs" />
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <Exec Command="node --version" ContinueOnError="true">

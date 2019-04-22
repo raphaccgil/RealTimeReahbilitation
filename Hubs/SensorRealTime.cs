@@ -1,21 +1,29 @@
-﻿using System;
-using Microsoft.AspNetCore.SignalR;
-using MongoDB.Driver;
+﻿using Microsoft.AspNetCore.SignalR;
 using WebAPP_Reahb_Server.Models;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
+using System;
+using System.Collections.Generic;
+
 
 namespace WebAPP_Reahb_Server.Hubs
 {
 	public class SensorRealTime : Hub
 	{
-
-		public async Task SendMessage(string user, string message)
-		{
-			await Clients.All.SendAsync("ReceiveMessage", user, message);
+		//public async Task SendMessage(string user, string message)
+		//{
+		//	await Clients.All.SendAsync("ReceiveMessage", user, message);
+		//}
+		public async Task Broadcast(string sender, List<double> measurement)
+		{	       
+			await Clients.All.SendAsync("Broadcast", sender, measurement);
+			Console.WriteLine("EAE CARAIO");
+				// Do not Broadcast to Caller:
+				//    .AllExcept(new[] {Context.ConnectionId})
+				// Broadcast to all connected clients
+				//	.SendAsync("ReceiveBroadcast", sender, measurement);
 		}
 	}
+
 }
     	
 		//public SensorRealTime()
