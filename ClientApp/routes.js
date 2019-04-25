@@ -16,10 +16,8 @@ export const routes = (
   <Router history={newHistory}>
     <div>
     <Switch>
-          <Route exact path="/" component={Mylogin}/>
+          {/* <Route exact path="/" component={Mylogin}/> */}
           <Route path="/home" component={Home}/>
-          <Route path="/counter" component={Counter} />
-          <Route path="/fetchdata" component={FetchData}/>
           <Route path="/graphdata" component={Graph}/>
     </Switch>
     </div>

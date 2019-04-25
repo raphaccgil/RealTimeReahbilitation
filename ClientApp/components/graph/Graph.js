@@ -1,14 +1,9 @@
 import React, { Component, createClass } from "react";
-import { RouteComponentProps } from "react-router";
-import { Bar, Line, LineChart } from "react-chartjs-2";
-import axios from 'axios';
-import Websocket from 'react-websocket';  // websocket para coletar da API
+// import { RouteComponentProps } from "react-router";
+import { Line} from "react-chartjs-2";
 import "isomorphic-fetch";
-import { FetchData } from "../FetchData";
 import { HubConnectionBuilder } from '@aspnet/SignalR';
 import {Layout} from "../Layout";
-
-var config = {};
 
 const opt = {
     maintainAspectRatio: true,

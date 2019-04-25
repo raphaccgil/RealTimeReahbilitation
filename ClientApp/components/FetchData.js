@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { RouteComponentProps } from "react-router";
+// import { RouteComponentProps } from "react-router";
 import { Layout } from "./Layout"
 import "isomorphic-fetch";
 
