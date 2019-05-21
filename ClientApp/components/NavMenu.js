@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export class NavMenu extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    console.log("Verificar")
+    console.log("Verificar");
   }
   render() {
     return (
@@ -32,16 +32,6 @@ export class NavMenu extends Component {
               <li>
                 <NavLink to={"/home"} exact activeClassName="active">
                   <span className="glyphicon glyphicon-home" /> Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={"/counter"} activeClassName="active">
-                  <span className="glyphicon glyphicon-education" /> Counter
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={"/fetchdata"} activeClassName="active">
-                  <span className="glyphicon glyphicon-th-list" /> Fetch data
                 </NavLink>
               </li>
               <li>
