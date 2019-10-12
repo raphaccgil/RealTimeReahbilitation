@@ -31,7 +31,7 @@ namespace WebAPP_Reahb_Server.Models
         {
             get
             {
-				return _database.GetCollection<IotData>("IotData");
+				return _database.GetCollection<IotData>("sensor_coll");
             }
         }
     }

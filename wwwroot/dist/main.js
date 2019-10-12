@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "90e488043e07ee3fc1be"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6d9206b18d39a1d7a419"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -6576,7 +6576,7 @@ var Layout = exports.Layout = function (_Component) {
     return;
   }
 
-  reactHotLoader.register(Layout, "Layout", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/Layout.js");
+  reactHotLoader.register(Layout, "Layout", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/Layout.js");
   leaveModule(module);
 })();
 
@@ -8280,7 +8280,7 @@ var routes = exports.routes = _react2.default.createElement(
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _Mylogin.Mylogin }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _Home.Home }),
       _react2.default.createElement(_reactRouterDom.Route, { path: "/home", component: _Home.Home }),
       _react2.default.createElement(_reactRouterDom.Route, { path: "/counter", component: _Counter.Counter }),
       _react2.default.createElement(_reactRouterDom.Route, { path: "/fetchdata", component: _FetchData.FetchData }),
@@ -8299,8 +8299,8 @@ var routes = exports.routes = _react2.default.createElement(
     return;
   }
 
-  reactHotLoader.register(newHistory, "newHistory", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/routes.js");
-  reactHotLoader.register(routes, "routes", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/routes.js");
+  reactHotLoader.register(newHistory, "newHistory", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/routes.js");
+  reactHotLoader.register(routes, "routes", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/routes.js");
   leaveModule(module);
 })();
 
@@ -10073,7 +10073,7 @@ var FetchData = exports.FetchData = function (_Component) {
     return;
   }
 
-  reactHotLoader.register(FetchData, "FetchData", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/FetchData.js");
+  reactHotLoader.register(FetchData, "FetchData", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/FetchData.js");
   leaveModule(module);
 })();
 
@@ -10168,7 +10168,7 @@ var Laylogin = exports.Laylogin = function (_Component) {
     return;
   }
 
-  reactHotLoader.register(Laylogin, "Laylogin", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/Laylogin.js");
+  reactHotLoader.register(Laylogin, "Laylogin", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/Laylogin.js");
   leaveModule(module);
 })();
 
@@ -10278,26 +10278,6 @@ var NavMenu = exports.NavMenu = function (_Component) {
                 null,
                 _react2.default.createElement(
                   _reactRouterDom.NavLink,
-                  { to: "/counter", activeClassName: "active" },
-                  _react2.default.createElement("span", { className: "glyphicon glyphicon-education" }),
-                  " Counter"
-                )
-              ),
-              _react2.default.createElement(
-                "li",
-                null,
-                _react2.default.createElement(
-                  _reactRouterDom.NavLink,
-                  { to: "/fetchdata", activeClassName: "active" },
-                  _react2.default.createElement("span", { className: "glyphicon glyphicon-th-list" }),
-                  " Fetch data"
-                )
-              ),
-              _react2.default.createElement(
-                "li",
-                null,
-                _react2.default.createElement(
-                  _reactRouterDom.NavLink,
                   { to: "/graphdata", activeClassName: "active" },
                   _react2.default.createElement("span", { className: "glyphicon glyphicon-th-list" }),
                   " Graph data"
@@ -10329,7 +10309,7 @@ var NavMenu = exports.NavMenu = function (_Component) {
     return;
   }
 
-  reactHotLoader.register(NavMenu, "NavMenu", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/NavMenu.js");
+  reactHotLoader.register(NavMenu, "NavMenu", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/NavMenu.js");
   leaveModule(module);
 })();
 
@@ -26832,8 +26812,8 @@ if (true) {
     return;
   }
 
-  reactHotLoader.register(routes, "routes", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/boot.js");
-  reactHotLoader.register(renderApp, "renderApp", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/boot.js");
+  reactHotLoader.register(routes, "routes", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/boot.js");
+  reactHotLoader.register(renderApp, "renderApp", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/boot.js");
   leaveModule(module);
 })();
 
@@ -29359,7 +29339,7 @@ var Counter = exports.Counter = function (_Component) {
     return;
   }
 
-  reactHotLoader.register(Counter, "Counter", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/Counter.js");
+  reactHotLoader.register(Counter, "Counter", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/Counter.js");
   leaveModule(module);
 })();
 
@@ -29421,176 +29401,92 @@ var Home = exports.Home = function (_Component) {
         _react2.default.createElement(
           "h1",
           null,
-          "Hello, world!"
+          "."
+        ),
+        _react2.default.createElement(
+          "h1",
+          null,
+          "Dados Paciente"
         ),
         _react2.default.createElement(
           "p",
           null,
-          "Welcome to your new single-page application, built with:"
-        ),
-        _react2.default.createElement(
-          "ul",
-          null,
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://get.asp.net/" },
-              "ASP.NET Core"
-            ),
-            " and",
-            " ",
-            _react2.default.createElement(
-              "a",
-              { href: "https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx" },
-              "C#"
-            ),
-            " ",
-            "for cross-platform server-side code"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://facebook.github.io/react/" },
-              "React"
-            ),
-            " and",
-            " ",
-            _react2.default.createElement(
-              "a",
-              { href: "http://www.typescriptlang.org/" },
-              "TypeScript"
-            ),
-            " for client-side code"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://webpack.github.io/" },
-              "Webpack"
-            ),
-            " for building and bundling client-side resources"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "http://getbootstrap.com/" },
-              "Bootstrap"
-            ),
-            " for layout and styling"
-          )
+          _react2.default.createElement("label", null),
+          _react2.default.createElement("input", { type: "",
+            id: "SelectionUser",
+            value: "Carlos" })
         ),
         _react2.default.createElement(
           "p",
           null,
-          "To help you get started, we've also set up:"
-        ),
-        _react2.default.createElement(
-          "ul",
-          null,
           _react2.default.createElement(
-            "li",
+            "label",
             null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Client-side navigation"
-            ),
-            ". For example, click",
-            " ",
-            _react2.default.createElement(
-              "em",
-              null,
-              "Counter"
-            ),
-            " then ",
-            _react2.default.createElement(
-              "em",
-              null,
-              "Back"
-            ),
-            " to return here."
+            "Nome Paciente"
           ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Webpack dev middleware"
-            ),
-            ". In development mode, there's no need to run the ",
-            _react2.default.createElement(
-              "code",
-              null,
-              "webpack"
-            ),
-            " build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file."
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Hot module replacement"
-            ),
-            ". In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, rebuilt React components will be injected directly into your running application, preserving its live state."
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Efficient production builds"
-            ),
-            ". In production mode, development-time features are disabled, and the ",
-            _react2.default.createElement(
-              "code",
-              null,
-              "webpack"
-            ),
-            " ",
-            "build tool produces minified static CSS and JavaScript files."
-          )
-        ),
-        _react2.default.createElement(
-          "h4",
-          null,
-          "Going further"
+          _react2.default.createElement("input", { type: "",
+            id: "NomeUser",
+            value: "Carlos Alberto" })
         ),
         _react2.default.createElement(
           "p",
           null,
-          "For larger applications, or for server-side prerendering (i.e., for",
-          " ",
           _react2.default.createElement(
-            "em",
+            "label",
             null,
-            "isomorphic"
+            "Idade Paciente"
           ),
-          " or ",
+          _react2.default.createElement("input", { type: "",
+            id: "IdadeUser",
+            value: "33" })
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
           _react2.default.createElement(
-            "em",
+            "label",
             null,
-            "universal"
+            "RG"
           ),
-          " applications), you should consider using a Flux/Redux-like architecture. You can generate an ASP.NET Core application with React and Redux using",
-          " ",
+          _react2.default.createElement("input", { type: "",
+            id: "RGUser",
+            value: "xxxxxxxxx" })
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
           _react2.default.createElement(
-            "code",
+            "label",
             null,
-            "dotnet new reactredux"
+            "Endere\xE7o paciente"
           ),
-          " instead of using this template."
+          _react2.default.createElement("input", { type: "",
+            id: "EnderecoUser",
+            value: "Rua Vitoriano 123" })
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          _react2.default.createElement(
+            "label",
+            null,
+            "Tempo exerc\xEDcio"
+          ),
+          _react2.default.createElement("input", { type: "",
+            id: "TempoExercicioUser",
+            value: "5 minutos" })
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          _react2.default.createElement(
+            "label",
+            null,
+            "Hor\xE1rio realiza\xE7\xE3o exerc\xEDcio"
+          ),
+          _react2.default.createElement("input", { type: "",
+            id: "HorarioUser",
+            value: "13:30" })
         )
       );
     }
@@ -29615,7 +29511,7 @@ var Home = exports.Home = function (_Component) {
     return;
   }
 
-  reactHotLoader.register(Home, "Home", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/Home.js");
+  reactHotLoader.register(Home, "Home", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/Home.js");
   leaveModule(module);
 })();
 
@@ -29742,7 +29638,7 @@ var Mylogin = exports.Mylogin = function (_Component) {
         return;
     }
 
-    reactHotLoader.register(Mylogin, "Mylogin", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/Mylogin.js");
+    reactHotLoader.register(Mylogin, "Mylogin", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/Mylogin.js");
     leaveModule(module);
 })();
 
@@ -29985,17 +29881,62 @@ var Graph = exports.Graph = function (_Component) {
                 _react2.default.createElement(
                     "h1",
                     null,
-                    "Vamos explorar os dados em tempo real"
+                    "."
+                ),
+                _react2.default.createElement(
+                    "h1",
+                    null,
+                    "Aquisi\xE7\xE3o em tempo real"
                 ),
                 _react2.default.createElement(
                     "p",
                     null,
-                    "Test val2"
+                    _react2.default.createElement("label", null),
+                    _react2.default.createElement("input", { type: "",
+                        id: "SelectUser2",
+                        value: "Carlos" })
                 ),
                 _react2.default.createElement(
                     "p",
                     null,
-                    "  "
+                    _react2.default.createElement(
+                        "label",
+                        null,
+                        "Nome Paciente"
+                    ),
+                    _react2.default.createElement("input", { type: "",
+                        id: "NomeUser2",
+                        value: "Carlos Alberto" })
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    _react2.default.createElement(
+                        "label",
+                        null,
+                        "Exerc\xEDcio"
+                    ),
+                    _react2.default.createElement("input", { type: "",
+                        id: "ExercicioUser2",
+                        value: "Game1" })
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    _react2.default.createElement("label", null),
+                    _react2.default.createElement("input", { type: "",
+                        id: "MessagemMedico",
+                        value: "Digita aqui a sua mensagem" })
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { type: "send" },
+                    "Enviar"
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { type: "limpar" },
+                    "Limpar"
                 ),
                 _react2.default.createElement(
                     "div",
@@ -30023,7 +29964,7 @@ var Graph = exports.Graph = function (_Component) {
                             _react2.default.createElement("hr", null),
                             _react2.default.createElement(
                                 "div",
-                                { className: "chart" },
+                                { className: "chart", align: "left" },
                                 _react2.default.createElement(Graphval, null)
                             )
                         )
@@ -30066,11 +30007,11 @@ var Graph = exports.Graph = function (_Component) {
         return;
     }
 
-    reactHotLoader.register(config, "config", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/graph/Graph.js");
-    reactHotLoader.register(opt, "opt", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/graph/Graph.js");
-    reactHotLoader.register(initialState, "initialState", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/graph/Graph.js");
-    reactHotLoader.register(Graphval, "Graphval", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/graph/Graph.js");
-    reactHotLoader.register(Graph, "Graph", "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/ClientApp/components/graph/Graph.js");
+    reactHotLoader.register(config, "config", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/graph/Graph.js");
+    reactHotLoader.register(opt, "opt", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/graph/Graph.js");
+    reactHotLoader.register(initialState, "initialState", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/graph/Graph.js");
+    reactHotLoader.register(Graphval, "Graphval", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/graph/Graph.js");
+    reactHotLoader.register(Graph, "Graph", "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/ClientApp/components/graph/Graph.js");
     leaveModule(module);
 })();
 

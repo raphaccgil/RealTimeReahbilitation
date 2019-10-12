@@ -13535,11 +13535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/WebAPP_Reahb_Server.csproj",
+      "projectUniqueName": "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/WebAPP_Reahb_Server.csproj",
       "projectName": "WebAPP_Reahb_Server",
-      "projectPath": "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/WebAPP_Reahb_Server.csproj",
+      "projectPath": "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/WebAPP_Reahb_Server.csproj",
       "packagesPath": "/Users/raphacgil/.nuget/packages/",
-      "outputPath": "/Users/raphacgil/Documents/Raphael/Mestrado/WebAPP_Reahb_Server/obj",
+      "outputPath": "/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

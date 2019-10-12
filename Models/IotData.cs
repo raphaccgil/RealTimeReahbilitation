@@ -11,17 +11,37 @@ namespace WebAPP_Reahb_Server.Models
 		public ObjectId Id { get; set; }
 
 		[Required]
-		public double Pitch {get; set;}
+		public double pitch {get; set;}
 
 		[Required]
-		public double Head { get; set;}
+		public double pitch_median { get; set; }
 
 		[Required]
-		public double Roll { get; set;}
+		public double yam { get; set;}
 
 		[Required]
-		[DataType(DataType.Date)]
-		public DateTime Date { get; set; }
+		public double yam_median { get; set; }
+
+		[Required]
+		public double roll { get; set;}
+
+		[Required]
+		public double roll_median { get; set; }
+
+		[Required]
+		//[DataType(DataType.Date)]
+		//public DateTime datetime_int { get; set; }
+
+		public string datetime_int { get; set; }
+              	      
+        public long datetime { get; set; }
+        
+        public string game_selection { get; set; }
+        
+		public long name_patient { get; set; }
+        
+		public string id_patient { get; set; }
+
 
     }
 }

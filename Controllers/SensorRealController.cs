@@ -39,7 +39,7 @@ namespace WebAPP_Reahb_Server.Controllers
 		[HttpGet]
 		public async Task MainAsyncCont()
         {
-			Console.Out.WriteAsync("passou????");
+			//Console.Out.WriteAsync("passou????");
 			var cancellationTokenSource = new CancellationTokenSource();
 			await Task.Run(() => MainAsync(cancellationTokenSource.Token).GetAwaiter().GetResult(), cancellationTokenSource.Token);
         }
@@ -47,7 +47,7 @@ namespace WebAPP_Reahb_Server.Controllers
 		private static async Task MainAsync(CancellationToken cancellationToken)
 
 		{
-			Console.Out.WriteAsync("passou????");
+			//Console.Out.WriteAsync("passou????");
 			var hubConnection = new HubConnectionBuilder()            
 				.WithUrl("http://localhost:60672/iot")
                 .Build();
@@ -60,22 +60,25 @@ namespace WebAPP_Reahb_Server.Controllers
 
             // Esse será o ponto no qual irá alimentar o servidor com os dados coletados no mongodb
             MongoDBContext dBContext = new MongoDBContext();
-
+            
             // colocar filtro de últimos 5 minutos de coleta
-            List<IotData> listaVal = dBContext.IotData.Find(m => true).ToList();
+			List<IotData> listaVal = dBContext.IotData.Find(m => true).Limit(10).ToList();
 
             // preparar os dados
-            List<Double> listaHead = new List<double>();
+            List<Double> listaYam = new List<double>();
 
             foreach (var foo in listaVal)
             {
-                listaHead.Add(foo.Head);  // RIGHT, foo properties are editable
+				listaYam.Add(foo.yam);  // RIGHT, foo properties are editable
+				Console.Out.WriteAsync("-----------------------------------------");
+				Console.Out.WriteAsync("flag1");
+				Console.Out.WriteAsync(foo.datetime_int);
             }
 			while (!cancellationToken.IsCancellationRequested)
             {
                 await Task.Delay(250, cancellationToken);
                 // Finally send the value:
-				await hubConnection.SendAsync("Broadcast", "data", listaHead, cancellationToken);
+				await hubConnection.SendAsync("Broadcast", "data", listaYam, cancellationToken);
             }
 
 			await hubConnection.DisposeAsync();
@@ -96,7 +99,7 @@ namespace WebAPP_Reahb_Server.Controllers
 
 			foreach (var foo in listaVal)
             {
-				listaHead.Add(foo.Head);  // RIGHT, foo properties are editable
+				listaHead.Add(foo.yam);  // RIGHT, foo properties are editable
             }
 
 			return Json(listaHead);

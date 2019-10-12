@@ -201,9 +201,34 @@ export class Graph extends Component {
       return (
     <div>
         <Layout/>
-        <h1>Vamos explorar os dados em tempo real</h1>
-            <p>Test val2</p> 
-            <p>  </p>
+        <h1>.</h1>
+        <h1>Aquisição em tempo real</h1>
+        <p>
+        <label></label>
+        <input type = ""
+                 id = "SelectUser2"
+                 value = "Carlos" />
+        </p>
+        <p>
+          <label>Nome Paciente</label>
+          <input type = ""
+                 id = "NomeUser2"
+                 value = "Carlos Alberto" />
+        </p>
+        <p>
+          <label>Exercício</label>
+          <input type = ""
+                 id = "ExercicioUser2"
+                 value = "Game1" />
+        </p>
+        <p>
+          <label></label>
+          <input type = ""
+                 id = "MessagemMedico"
+                 value = "Digita aqui a sua mensagem" />
+        </p>
+        <button type="send">Enviar</button>
+        <button type="limpar">Limpar</button>
         <div className="container">
         <div className="row">&nbsp;</div>
         <div className="row">
@@ -212,7 +237,7 @@ export class Graph extends Component {
         <div className="row">
             <div className="col-12">
                 <hr />
-                <div className="chart">
+                <div className="chart" align="left">
                 <Graphval
                 />
             </div>
