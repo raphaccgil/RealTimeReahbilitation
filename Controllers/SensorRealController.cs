@@ -70,9 +70,6 @@ namespace WebAPP_Reahb_Server.Controllers
             foreach (var foo in listaVal)
             {
 				listaYam.Add(foo.yam);  // RIGHT, foo properties are editable
-				Console.Out.WriteAsync("-----------------------------------------");
-				Console.Out.WriteAsync("flag1");
-				Console.Out.WriteAsync(foo.datetime_int);
             }
 			while (!cancellationToken.IsCancellationRequested)
             {
