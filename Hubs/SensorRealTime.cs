@@ -13,7 +13,7 @@ namespace WebAPP_Reahb_Server.Hubs
 		//{
 		//	await Clients.All.SendAsync("ReceiveMessage", user, message);
 		//}
-		public async Task Broadcast(string sender, List<double> measurement)
+		public async Task Broadcast(string sender, List<JsonClass> measurement)
 		{	       
 			await Clients.All.SendAsync("Broadcast", sender, measurement);
 			Console.WriteLine("EAE CARAIO");
