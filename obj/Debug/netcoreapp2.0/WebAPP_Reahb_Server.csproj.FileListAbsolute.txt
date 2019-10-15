@@ -25,9 +25,9 @@
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.runtimeconfig.dev.json
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.dll
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/bin/Debug/netcoreapp2.0/WebAPP_Reahb_Server.pdb
-/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.csprojResolveAssemblyReference.cache
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.csproj.CoreCompileInputs.cache
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.AssemblyInfoInputs.cache
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.AssemblyInfo.cs
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.dll
 /Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.pdb
+/Users/raphacgil/Documents/Raphael/Mestrado/git/RealTimeReahbilitation/obj/Debug/netcoreapp2.0/WebAPP_Reahb_Server.csprojResolveAssemblyReference.cache

@@ -62,23 +62,33 @@ namespace WebAPP_Reahb_Server.Controllers
             MongoDBContext dBContext = new MongoDBContext();
             
             // colocar filtro de últimos 5 minutos de coleta
-			List<IotData> listaVal = dBContext.IotData.Find(m => true).Limit(10).ToList();
+         
+			List<IotData> listaVal = dBContext.IotData.Find(m => true).SortByDescending(e => e.datetime).Limit(100).ToList();
 
-            // preparar os dados
-            List<Double> listaYam = new List<double>();
-
+			// preparar os dados
+			List<JsonClass> listback = new List<JsonClass>();
+         
             foreach (var foo in listaVal)
             {
-				listaYam.Add(foo.yam);  // RIGHT, foo properties are editable
-				Console.Out.WriteAsync("-----------------------------------------");
-				Console.Out.WriteAsync("flag1");
-				Console.Out.WriteAsync(foo.datetime_int);
-            }
+				listback.Add(
+					new JsonClass
+					{
+						pitch = foo.pitch,
+						pitch_median = foo.pitch_median,
+						yam = foo.yam,
+						yam_median = foo.yam_median,
+						roll = foo.roll,
+						roll_median = foo.roll_median
+					}
+				);
+			}
+			//Console.WriteLine(listback);
+			       
 			while (!cancellationToken.IsCancellationRequested)
             {
-                await Task.Delay(250, cancellationToken);
+                await Task.Delay(2000, cancellationToken);
                 // Finally send the value:
-				await hubConnection.SendAsync("Broadcast", "data", listaYam, cancellationToken);
+				await hubConnection.SendAsync("Broadcast", "data", listback, cancellationToken);
             }
 
 			await hubConnection.DisposeAsync();

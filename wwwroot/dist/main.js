@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6d9206b18d39a1d7a419"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5c6d57e12ba39d5f569e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -29730,7 +29730,7 @@ var initialState = {
         fill: false,
         data: [65, 59, 80, 81, 56]
     }, {
-        label: 'Average Picth',
+        label: 'Median Picth',
         borderColor: 'rgba(0,99,155,1)',
         backgroundColor: 'rgba(0,99,155,1)',
         borderWidth: 2,
@@ -29744,21 +29744,21 @@ var initialState = {
         fill: false,
         data: [25, 76, 44, 81, 56]
     }, {
-        label: 'Average Roll',
+        label: 'Median Roll',
         borderColor: 'rgba(155,99,132,1)',
         backgroundColor: 'rgba(155,99,132,1)',
         borderWidth: 2,
         fill: false,
         data: [25, 76, 44, 81, 56]
     }, {
-        label: 'Head',
+        label: 'Yam',
         borderColor: 'rgba(50,150,25,1)',
         backgroundColor: 'rgba(50,150,25,1)',
         borderWidth: 2,
         fill: false,
         data: [25, 76, 44, 81, 56]
     }, {
-        label: 'Average Head',
+        label: 'Median Yam',
         borderColor: 'rgba(50,100,25,1)',
         backgroundColor: 'rgba(50,100,25,1)',
         borderWidth: 2,
@@ -29778,7 +29778,7 @@ var Graphval = createReactClass({
         var _this2 = this;
 
         var messagecollect = [];
-        console.log("Erro aqui?");
+        //console.log("Erro aqui?")
         var hubConnection = new _SignalR.HubConnectionBuilder().withUrl('/iot').build();
 
         hubConnection.start().catch(function (err) {
@@ -29787,8 +29787,10 @@ var Graphval = createReactClass({
         // Inicio da coleta
         hubConnection.on("Broadcast", function (message, user) {
             var msg = message;
-            console.log(user); // aqui é coletado o cliente dos dados, nao apagar durante teste
+            //console.log("Treta")
+            //console.log(user)  // aqui é coletado o cliente dos dados, nao apagar durante teste
             _this2.state.encodedMsg = user; // usar aqui os dados
+            _this2.data = msg;
         });
 
         var _this = this;
@@ -29801,6 +29803,10 @@ var Graphval = createReactClass({
             var oldDataSet5 = _this.state.datasets[4];
             var oldDataSet6 = _this.state.datasets[5];
             var datawebsock = _this.state.encodedMsg;
+            //console.log("TretaErrada")
+            //console.log(_this.state.datasets[0])
+            //console.log("Forte")
+            //console.log(_this.state.encodedMsg)
 
             var newData = [[], [], []];
 
@@ -29811,13 +29817,25 @@ var Graphval = createReactClass({
             }
 
             // aqui é somente para testes
-            var new_date = [[], [], [], [], []];
+            var new_date = [[], [], [], [], [], [], []];
             for (var x = 0; x < datawebsock.length; x++) {
-                new_date[0].push(Math.random() + datawebsock[x]);
-                new_date[1].push(Math.random() + datawebsock[x]);
-                new_date[2].push(Math.random() + datawebsock[x]);
-                new_date[3].push(Math.random() + datawebsock[x]);
-                new_date[4].push(Math.random() + datawebsock[x]);
+                //new_date[0].push(Math.random() + datawebsock[x])
+                new_date[0].push(datawebsock[x]['pitch']);
+                new_date[1].push(datawebsock[x]['pitch_median']);
+                new_date[2].push(datawebsock[x]['roll']);
+                new_date[3].push(datawebsock[x]['roll_median']);
+                new_date[4].push(datawebsock[x]['yam']);
+                new_date[5].push(datawebsock[x]['yam_median']);
+                new_date[6].push(String(x));
+
+                //console.log(datawebsock[x]['roll'])
+                //console.log(datawebsock[x]['roll_median'])
+
+                //new_date[1].push(Math.random() + datawebsock[x])
+                //new_date[2].push(Math.random() + datawebsock[x])
+                //new_date[3].push(Math.random() + datawebsock[x])
+                //new_date[4].push(Math.random() + datawebsock[x])
+
             }
 
             var newDataSet1 = _extends({}, oldDataSet1);
@@ -29831,18 +29849,22 @@ var Graphval = createReactClass({
             var newDataSet5 = _extends({}, oldDataSet5);
 
             var newDataSet6 = _extends({}, oldDataSet6);
-            newDataSet1.data = datawebsock;
-            newDataSet2.data = new_date[0];
-            newDataSet3.data = new_date[1];
-            newDataSet4.data = new_date[2];
-            newDataSet5.data = new_date[3];
-            newDataSet6.data = new_date[4];
+
+            //newDataSet1.data = datawebsock;
+            newDataSet1.data = new_date[0];
+            newDataSet2.data = new_date[1];
+            newDataSet3.data = new_date[2];
+            newDataSet4.data = new_date[3];
+            newDataSet5.data = new_date[4];
+            newDataSet6.data = new_date[5];
+            //_this.state.labels = new_date[6];
 
             var newState = _extends({}, initialState, {
+                labels: new_date[6],
                 datasets: [newDataSet1, newDataSet2, newDataSet3, newDataSet4, newDataSet5, newDataSet6]
             });
             _this.setState(newState);
-        }, 5000);
+        }, 3000);
         this.FetchData();
     },
     FetchData: function FetchData() {
